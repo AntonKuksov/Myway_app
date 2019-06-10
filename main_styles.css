@@ -1,0 +1,17 @@
+body {
+    background:url(image1.jpg) no-repeat;
+    background-size:cover;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+
+
+.animateMe{
+
+}
+
+h4 {
+color: white;
+font-size: 2em;
+}
+
