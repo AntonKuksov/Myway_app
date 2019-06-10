@@ -10,7 +10,8 @@
 
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet'/>
+	<script type="text/javascript" src="map.js"></script>
 	<style>
 		/* body {
 			margin: 0;
@@ -125,14 +126,12 @@
 				container: 'map', // container id
 				style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
 				center: latlon, // starting position [lng, lat]
-				zoom: 12 // starting zoom                  
+				zoom: 11 // starting zoom                  
 			});
 
 		}
 	
-	</script>
 
-	<script type="text/javascript">
 	
 	var $table = $('#table');
 			$table.bootstrapTable({
@@ -178,9 +177,13 @@
 				// $element: the tr element.
 				console.log(row, $element);
 
+				var startPoint = row.startpoint.split(',');
+				var endPoint = row.endpoint.split(',');
 
+				console.log(startPoint, endPoint);
+				ShowRoute(startPoint, endPoint);
 				
-    }
+				}
 				
 			  });
 

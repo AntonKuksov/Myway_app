@@ -20,6 +20,8 @@ if (mysqli_connect_errno()) {
 	 		 	 				'type' => $rowList['type'],
 	 		 	 				'distance' => $rowList['distance'],
 	 		 	 				'rank' => $rowList['rank'],
+	 		 	 				'startpoint' => $rowList['startpoint'],
+	 		 	 				'endpoint' => $rowList['endpoint'],
 	 		 	 				'date' => $rowList['date']
 	 		 	 				
  	 		 	 			);		
