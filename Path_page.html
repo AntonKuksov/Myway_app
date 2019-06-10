@@ -1,0 +1,104 @@
+<html>
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project_css.css">
+</head>
+<body id="background" background="image1.jpg">
+    <div class="container">
+            <div class="stars" data-rating="3">
+                    <span class="star">&nbsp;</span>
+                    <span class="star">&nbsp;</span>
+                    <span class="star">&nbsp;</span>
+                    <span class="star">&nbsp;</span>
+                    <span class="star">&nbsp;</span>
+                </div>
+       <div class="row" >
+            <div class="col-lg-3">   <!-- style="padding: 0px; border: 1px solid white;" -->
+              <p style="margin-left:45px; margin-top:125px">Distance:</p>  
+              <p style="margin-left:45px; margin-top:50px">Date:</p>
+              <p style="margin-left:45px; margin-top:50px">Time:</p>
+              <hr>
+              <p style="margin-left:45px; margin-top:25px; margin-bottom: 50px">Weather:</p>
+              <hr>
+            </div>
+            
+            <div class="col-lg-3"> <!-- style="padding: 0px; border: 1px solid white;" -->
+                <div>
+                    <input id="input" class="form-control form-control-sm" type="text" placeholder="x km x m"> 
+                    <input class="form-control form-control-sm" type="text" placeholder="dd/mm/yyyy"
+                    style="margin-left:0px; margin-top:40px; margin-bottom:40px; border-radius: 10px; width:70%;">
+                    <input class="form-control form-control-sm" type="text" placeholder="x h x min"
+                    style="margin-left:0px; border-radius: 10px; width:70%;"> 
+                </div>
+                <hr>
+                <hr style="margin-top:97px;">
+            </div>
+            <div class="col-lg-6" style="border: 1px solid white;">
+                
+                <p>google maps </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6"> <!--style="border: 1px solid white;"  -->
+                <p style="margin: 0px">Your comment:</p>
+                <form>
+                    <textarea rows= "9" cols="1" class="comment" placeholder="Your comment..."> 
+                        </textarea>
+                </form>
+                
+            </div>
+            <div class="col-lg-6"> <!--style="border: 1px solid white;"  -->
+                <a class="btn btn-primary sim-button" href="#" role="button" 
+                style="margin-left:200px; margin-top:150px;  border-radius: 10px">
+                    <span>GOOGLE MAPS</span></a>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        
+            //initial setup
+            document.addEventListener('DOMContentLoaded', function(){
+                let stars = document.querySelectorAll('.star');
+                stars.forEach(function(star){
+                    star.addEventListener('click', setRating); 
+                });
+                
+                let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+                let target = stars[rating - 1];
+                target.dispatchEvent(new MouseEvent('click'));
+            });
+            function setRating(ev){
+                let span = ev.currentTarget;
+                let stars = document.querySelectorAll('.star');
+                let match = false;
+                let num = 0;
+                stars.forEach(function(star, index){
+                    if(match){
+                        star.classList.remove('rated');
+                    }else{
+                        star.classList.add('rated');
+                    }
+                    //are we currently looking at the span that was clicked
+                    if(star === span){
+                        match = true;
+                        num = index + 1;
+                    }
+                });
+                document.querySelector('.stars').setAttribute('data-rating', num);
+            }
+            
+        </script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

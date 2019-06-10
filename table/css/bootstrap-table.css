@@ -194,6 +194,7 @@
     clear: both;
     font-weight: normal;
     line-height: 1.428571429;
+    
 }
 
 .fixed-table-toolbar .bs-bars,
@@ -226,7 +227,7 @@
     font-weight: bold;
     display: inline-block;
     min-width: 30%;
-    text-align: left !important;
+    text-align: center !important;
 }
 
 /* support bootstrap 2 */
