@@ -1,0 +1,222 @@
+.modal-content {
+	background-image: url("children.jpg");
+	background-size: cover;
+}
+.star{
+	color: gold;
+	font-size: 35px;
+	padding: 10px; /* space out the stars */
+	
+  }
+  .star::before{
+	content: '\2606';    /* star outline */
+	cursor: pointer;
+  }
+  .star.rated::before{
+	/* the style for a selected star */
+	content: '\2605';  /* filled star */
+  }
+  
+  .stars{
+	  counter-reset: rateme 0;   
+	  font-size: 2.0rem;
+	  margin-left: 675px;
+	  margin-top: 80px;
+	  
+  }
+  .star.rated{
+	  counter-increment: rateme 1;
+  }
+  
+.comment{
+	width:90%;
+	height: 250px;
+	padding: 10px;
+	background-color: transparent;
+	font-style: inherit;
+	text-decoration-color: underline;
+	border: 1px solid rgba(255,255,255,0.35);
+	color:white;
+}
+#background{
+	color:white;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#input{
+	margin-left:0px;
+	margin-top:125px; 
+	border-radius: 10px; 
+	width:70%;
+}
+hr{
+	border:1px solid rgba(255,255,255,0.35);
+	margin-bottom: 25px;
+	
+}
+img{
+    width:75px;
+	height:75px;
+}
+button{
+    width:75px;
+    height:75px;
+    border:0;
+    border-radius:50%;
+    padding:0;
+	background: transparent;
+	margin-right: 15px;
+}
+.nav-item {
+	border-radius: 10px;
+	color: rgba(255,255,255,1);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.nav-item a{
+	color: rgba(51,51,51,1);
+	text-decoration: none;
+	display: block;
+}
+.nav-item::before{
+	border-radius: 10px;
+	content: '';
+	position: absolute;
+	bottom: 7;
+	left: 2;
+	width: 95%;
+	height: 75%;
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(255,255,255,0.5);
+	border-bottom-color: rgba(255,255,255,0.5);
+	-webkit-transform: scale(0.1, 1);
+	transform: scale(0.1, 1);
+	
+}
+.nav-item:hover {
+	letter-spacing: 2px;
+	}
+.nav-item:hover::before{
+	opacity: 1;	
+	-webkit-transform: scale(1, 1);
+	transform: scale(1, 1);
+	
+}
+.nav-item::after{
+	border-radius: 10px;
+	content: '';
+	position: absolute;
+	bottom: 7;
+	left: 2;
+	width: 95%;
+	height: 75%;
+	z-index: 1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.25);
+	
+}
+.nav-item:hover::after{
+	border-radius: 10px;
+	opacity: 0;	
+	-webkit-transform: scale(0.1, 1);
+	transform: scale(0.1, 1);
+}
+.sim-button {
+	border-radius: 10px;
+    line-height: 35px;
+    height: 50px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+    cursor: pointer;
+}
+.btn-primary{
+	border-radius: 10px;
+	color: rgba(255,255,255,1);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	position: relative;	
+}
+.btn-primary a{
+	color: rgba(51,51,51,1);
+	text-decoration: none;
+	display: block;
+}
+.btn-primary span{
+	z-index: 2;	
+	display: block;
+	position: ;
+	width: 100%;
+	height: 100%;	
+}
+.btn-primary::before{
+	border-radius: 10px;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.25);
+}
+.btn-primary::after{
+	border-radius: 10px;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.25);
+
+}
+.btn-primary:hover::before{
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+			background-color: rgba(255,255,255,0);
+}
+.btn-primary:hover::after{
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+			background-color: rgba(255,255,255,0);
+}
