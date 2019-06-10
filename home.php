@@ -173,6 +173,12 @@
 				
 				],
 
+				onClickRow: function (row, $element) {
+				// row: the record corresponding to the clicked row, 
+				// $element: the tr element.
+				console.log(row, $element);
+    }
+				
 			  });
 
 </script>
