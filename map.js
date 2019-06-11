@@ -1,5 +1,52 @@
 
-function ShowRoute(startpoint, endpoint){
+class Route {
+
+	
+	constructor(startpoint, endpoint) {
+		this.startpoint = startpoint;
+		this.endpoint = endpoint;
+		
+	  }
+
+	  
+	  
+showPosition(po, container) {
+
+	console.log(po, container);
+
+	var map = new mapboxgl.Map({
+		container: container, // container id
+		style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+		center: po, // starting position [lng, lat]
+		zoom: 12 // starting zoom                  
+	});
+
+		var x = document.getElementById("demo");
+		//x.innerHTML = point;
+
+}
+
+getLocation(loc) {
+
+	
+		if (navigator.geolocation) {
+			
+			navigator.geolocation.getCurrentPosition(writeposition);
+
+			function writeposition(position){
+				var p = [position.coords.longitude, position.coords.latitude];
+				route.showPosition(p,loc);
+			}
+
+		} else {
+			return "Geolocation is not supported by this browser.";
+		}
+
+
+}
+
+
+ShowRoute(startpoint, endpoint){
 
 
 			
@@ -10,7 +57,7 @@ function ShowRoute(startpoint, endpoint){
 				container: 'map', // container id
 				style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
 				center: latlon, // starting position [lng, lat]
-				zoom: 10 // starting zoom                  
+				zoom: 11 // starting zoom                  
 			});
 
 			// initialize the map canvas to interact with later
@@ -159,4 +206,5 @@ function ShowRoute(startpoint, endpoint){
 
             });
             
-        }
+		}
+}
