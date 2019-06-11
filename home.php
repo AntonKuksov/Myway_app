@@ -28,39 +28,39 @@
 	</style>
 </head>
 
-<body id="background" background="image1.jpg">
-	<header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style= "margin:25px 100px; border-radius: 10px; height:7%; width:85%;">
-                <a class="navbar-brand" style="margin-left:125px;">LOGO</a>
-                <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 50px; font-family: 'Roboto', sans-serif; font-size: 18;">
-                  <ul class="navbar-nav">
-                    <li class="nav-item sim-button" style="margin-left: 100px;">
-                      <a class="nav-link" href="#">Home </a>
-                    </li>
-                    <li class="nav-item sim-button" style="margin-left: 100px;">
-                      <a class="nav-link" href="#">Account</a>
-                    </li>
-                    <li class="nav-item sim-button" style="margin-left: 100px;">
-                      <a class="nav-link" href="#">Info</a>
-                    </li>
-                    <li class="nav-item sim-button" style="margin-left: 100px;">
-                      <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="sim-button" style="margin-left: 150px;">
-                        <a class="nav-link" href="#">est</a>
-                    </li>
-                    <li class="sim-button" style="margin-left: 50px;">
-                        <a class="nav-link" href="#">eng</a>
-                    </li>
-                  </ul>
-                </div>
-            </nav>
-        </header>			
+<body>
+
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<a class="navbar-brand" href="#">Top navbar</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">My Trips</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">My Account</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About Us</a>
+				</li>
+
+			</ul>
+		</div>
+	</nav>
+
 	<div class="row">
 	<div class="col-md-6">
 		<div class="page-header">
+			<h1>
+			  Find the best route!
+			</h1>
 		</div>
 
 
@@ -89,64 +89,7 @@
 		
 		</div>
 	</div>
-	<a class="btn btn-primary sim-button" href="#" role="button" data-toggle="modal" data-target=".bd-example-modal-xl"
-        style="float: right; margin-left:175px; margin-top: 100px; margin-bottom:80px; border-radius: 10px">
-        <span>CREATE A PATH ----></span></a>
-        <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="container">
-                        <div class="row" style="margin-top:50px">
-                            <div class="col-lg-3"  style="padding: 0px;"> <!--border: 1px solid white;   --> 
-                                <p style="margin-left:45px; margin-top:125px">Start:</p>  
-                                <p style="margin-left:45px; margin-top:50px">Finish:</p>
-                                <p style="margin-left:45px; margin-top:173px">Activity:
-                                <button style="margin-left:85px;">
-                                    <img src="runner2.png">
-                                </button>
-                                </p>
-                            </div>
-                            <div class="col-lg-3" style="padding: 0px;">
-                                <div>
-                                    <input id="input" class="form-control form-control-sm" type="text" placeholder="coordinates"> 
-                                    <input class="form-control form-control-sm" type="text" placeholder="coordinates"
-                                    style="margin-left:0px; margin-top:40px; margin-bottom:170px; border-radius: 10px; width:70%;">
-                                </div>
-                                <div>
-                                    <button>
-                                        <img src="hiker2.png">
-                                    </button>
-                                    <button>
-                                        <img src="cyclist2.png" > 
-                                    </button>
-                                    <button>
-                                        <img src="skier2.png"  >
-									</button>   
-									<div class="col-lg-6" style="border: 1px solid white;">
-                                           <p>google maps </p>
-                                       </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6"><!-- style="border: 1px solid white;" -->
-                                            <a class="btn btn-primary sim-button" href="file:///C:/Users/Karl%20Peet/Desktop/New/project/Home.html" 
-                                            role="button" style="margin-left:200px; margin-top:100px; margin-bottom:100px; border-radius: 10px">
-                                               <span>BACK</span></a>
-                                           
-                                       </div>
-                                       <div class="col-lg-6"><!-- style="border: 1px solid white;" -->
-                                           <a class="btn btn-primary sim-button" href="#" 
-                                           role="button" style="margin-left:200px; margin-top:100px; margin-bottom:100px; border-radius: 10px">
-                                               <span>SAVE</span></a>      
-                                		</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-					
+
 	<script src="table/js/jquery-1.11.1.min.js"></script>
 	<script src="table/js/bootstrap.min.js"></script>
 	<script src="table/js/bootstrap-table.js"></script>
