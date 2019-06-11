@@ -62,7 +62,8 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="main_styles.css">
@@ -113,13 +114,13 @@
 							</div>
 							<hr>
 							<button id="SignButton" class="btn btn-lg btn-primary btn-block text-uppercase" name="signup" type="submit">Sign Up</button>
+							<button id="SignBack" class="btn btn-lg btn-primary btn-block text-uppercase" name="signback" onclick="location.reload()">Back</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</script>
-
 	<script id="blockOfLogInCard" type="text/html">
 		<div class="row py-5 my-5">
 			<div class="col-lg-5 col-xl-4 mx-auto">
@@ -141,6 +142,7 @@
 								</div>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block text-uppercase" name="login" type="submit">Login</button>
+							<button id="SignBack" class="btn btn-lg btn-primary btn-block text-uppercase" name="signback" onclick="location.reload()">Back</button>
 						</form>
 					</div>
 				</div>

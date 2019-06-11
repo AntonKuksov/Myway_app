@@ -1,7 +1,8 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="project_css.css">
@@ -31,8 +32,8 @@
 <body id="background" background="image1.jpg">
 	<header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style= "margin:25px 100px; border-radius: 10px; height:7%; width:85%;">
-                <a class="navbar-brand" style="margin-left:125px;"><img src="bootprint.png" style="width:100%; height:150%;"></a>
-                <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" style="margin-left:;"><img src="bootprint.png" id="logo" style="width:80%; height:130%;"></a>
+                <button class="navbar-toggler navbar-toggler-icon" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 50px; font-family: 'Roboto', sans-serif; font-size: 18;">
                   <ul class="navbar-nav">
@@ -99,11 +100,11 @@
 				<div class="container">
 					<div class="row" style="margin-top:50px">
 					<div class="col-lg-3"  style="padding: 0px;"> <!--border: 1px solid white;   --> 
-						<p style="margin-left:45px; margin-top:125px">Start:</p>  
+						<p style="margin-left:45px; margin-top:85px">Start:</p>  
 						<p style="margin-left:45px; margin-top:50px">Finish:</p>
-						<p style="margin-left:45px; margin-top:173px">Activity:
+						<p style="margin-left:45px; margin-top:170px">Activity:
 						<button style="margin-left:85px;">
-							<img src="runner2.png">
+						<img src="runner2.png">
 						</button>
 						</p>
 					</div>
