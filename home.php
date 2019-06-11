@@ -23,14 +23,15 @@
 			position: absolute;
 			top: 4em;
 			bottom: 0;
-			width: 100%;
+			width: 95%;
+			
 		}
 	</style>
 </head>
 <body id="background" background="image1.jpg">
 	<header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style= "margin:25px 100px; border-radius: 10px; height:7%; width:85%;">
-                <a class="navbar-brand" style="margin-left:125px;">LOGO</a>
+                <a class="navbar-brand" style="margin-left:125px;"><img src="bootprint.png" style="width:100%; height:150%;"></a>
                 <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 50px; font-family: 'Roboto', sans-serif; font-size: 18;">
@@ -60,9 +61,6 @@
 	<div class="row">
 	<div class="col-md-6">
 		<div class="page-header">
-			<h1>
-			  Find the best route!
-			</h1>
 		</div>
 		<div class="panel panel-success">
 
@@ -87,6 +85,69 @@
 		<p id="demo"></p>
 		<div id='map'></div>
 		
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6"><!-- style="border: 1px solid black" --></div>
+		<div class="col-lg-6"><!-- style="border: 1px solid black" -->
+		<a class="btn btn-primary sim-button" href="#" role="button" data-toggle="modal" data-target=".bd-example-modal-xl"
+		style="margin-left:175px; margin-top: 100px; margin-bottom:80px; border-radius: 10px; width:40%">
+		<span>CREATE A PATH ----></span></a>
+			<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+				<div class="modal-content">
+				<div class="container">
+					<div class="row" style="margin-top:50px">
+					<div class="col-lg-3"  style="padding: 0px;"> <!--border: 1px solid white;   --> 
+						<p style="margin-left:45px; margin-top:125px">Start:</p>  
+						<p style="margin-left:45px; margin-top:50px">Finish:</p>
+						<p style="margin-left:45px; margin-top:173px">Activity:
+						<button style="margin-left:85px;">
+							<img src="runner2.png">
+						</button>
+						</p>
+					</div>
+					<div class="col-lg-3" style="padding: 0px;">
+						<div>
+							<input id="input" class="form-control form-control-sm" type="text" placeholder="coordinates"> 
+							<input class="form-control form-control-sm" type="text" placeholder="coordinates"
+							style="margin-left:0px; margin-top:40px; margin-bottom:170px; border-radius: 10px; width:70%;">
+						</div>
+					<div>
+						<button>
+							<img src="hiker2.png">
+						</button>
+						<button>
+							<img src="cyclist2.png" > 
+						</button>
+						<button>
+							<img src="skier2.png"  >
+						</button>
+					</div>
+					</div>
+					<div class="col-lg-6" style="border: 1px solid white; margin-right:px;">
+						<p id="demo"></p>
+						<div id='map'></div>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-lg-6"><!-- style="border: 1px solid white;" -->
+						<a class="btn btn-primary sim-button" href="" 
+						role="button" style="margin-left:200px; margin-top:100px; margin-bottom:100px; border-radius: 10px">
+							<span>BACK</span></a>
+						
+					</div>
+					<div class="col-lg-6"><!-- style="border: 1px solid white;" -->
+						<a class="btn btn-primary sim-button" href="#" 
+						role="button" style="margin-left:200px; margin-top:100px; margin-bottom:100px; border-radius: 10px">
+							<span>SAVE</span></a>
+					</div>   
+					</div> 
+				</div>
+				</div>
+			</div>
+			</div>
+		</div> 
 		</div>
 	</div>
 
@@ -185,6 +246,7 @@
 			  });
 
 </script>
+
 
 
 
