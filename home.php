@@ -90,7 +90,7 @@
 	<div class="row">
 		<div class="col-lg-6"><!-- style="border: 1px solid black" --></div>
 		<div class="col-lg-6"><!-- style="border: 1px solid black" -->
-		<a class="btn btn-primary sim-button" href="#" role="button" data-toggle="modal" data-target=".bd-example-modal-xl"
+		<a class="btn btn-primary sim-button" href="#myBtn" role="button" data-toggle="modal" data-target=".bd-example-modal-xl"
 		style="margin-left:175px; margin-top: 100px; margin-bottom:80px; border-radius: 10px; width:40%">
 		<span>CREATE A PATH ----></span></a>
 			<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
@@ -125,9 +125,9 @@
 						</button>
 					</div>
 					</div>
-					<div class="col-lg-6" style="border: 1px solid white; margin-right:px;">
-						<p id="demo"></p>
-						<div id='map'></div>
+					<div class="col-lg-6" id='modalmap'>
+						<div class="mapboxgl-canvas" style="position: absolute; width: 569px; height: 485px;" width="500" height="600"></div>
+						
 					</div>
 					</div>
 					<div class="row">
@@ -157,39 +157,19 @@
 
 	<script>
 
+		var route = new Route;
 	
 		mapboxgl.accessToken = 'pk.eyJ1IjoiYW50a3VrIiwiYSI6ImNqd2o3enRqejAwb2Y0OHBqaHZjMW03YzcifQ.U6SfQXTKYD-etKuREAD5EQ';
 
 		window.onload = function () {
-			getLocation();    
-		}
-
-		var x = document.getElementById("demo");
-		function getLocation() {
-			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition);
-			} else {
-				x.innerHTML = "Geolocation is not supported by this browser.";
-			}
-		}
-
-		function showPosition(position) {
-
-
-			x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-			var latlon = [position.coords.longitude, position.coords.latitude];
+		
+			route.getLocation('map');
 			
-
-			var map = new mapboxgl.Map({
-				container: 'map', // container id
-				style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-				center: latlon, // starting position [lng, lat]
-				zoom: 11 // starting zoom                  
-			});
-
 		}
-	
 
+		$('a[href$="#myBtn"]').on( "click", function() {
+			route.getLocation('modalmap');
+		});
 	
 	var $table = $('#table');
 			$table.bootstrapTable({
@@ -239,7 +219,8 @@
 				var endPoint = row.endpoint.split(',');
 
 				console.log(startPoint, endPoint);
-				ShowRoute(startPoint, endPoint);
+
+				route.ShowRoute(startPoint, endPoint);
 				
 				}
 				
