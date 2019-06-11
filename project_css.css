@@ -21,9 +21,9 @@
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
-#input{
+#input2{
 	margin-left:0px;
-	margin-top:80px; 
+	margin-top:25px; 
 	border-radius: 10px; 
 	width:70%;
 }
@@ -162,7 +162,7 @@ button{
 	color: rgba(255,255,255,1);
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
-	-o-transition: all 0.5s;
+2	-o-transition: all 0.5s;
 	transition: all 0.5s;
 	position: relative;	
 }

@@ -14,6 +14,12 @@
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet'/>
 	<script type="text/javascript" src="map.js"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<script type="text/javascript" src="map.js"></script>  
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<style>
 		/* body {
 			margin: 0;
@@ -64,7 +70,6 @@
 		<div class="page-header">
 		</div>
 		<div class="panel panel-success">
-
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-md-12">
@@ -91,7 +96,7 @@
 	<div class="row">
 		<div class="col-lg-6"><!-- style="border: 1px solid black" --></div>
 		<div class="col-lg-6"><!-- style="border: 1px solid black" -->
-		<a class="btn btn-primary sim-button" href="#myBtn" role="button" data-toggle="modal" data-target=".bd-example-modal-xl"
+		<a class="btn btn-primary sim-button" href="#" role="button" data-toggle="modal" data-target=".bd-example-modal-xl"
 		style="margin-left:175px; margin-top: 100px; margin-bottom:80px; border-radius: 10px; width:40%">
 		<span>CREATE A PATH ----></span></a>
 			<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
@@ -99,22 +104,27 @@
 				<div class="modal-content">
 				<div class="container">
 					<div class="row" style="margin-top:50px">
-					<div class="col-lg-3"  style="padding: 0px;"> <!--border: 1px solid white;   --> 
-						<p style="margin-left:45px; margin-top:85px">Start:</p>  
-						<p style="margin-left:45px; margin-top:50px">Finish:</p>
-						<p style="margin-left:45px; margin-top:170px">Activity:
-						<button style="margin-left:85px;">
-						<img src="runner2.png">
+					<div class="col-lg-3"  style="padding: 0px; "> <!--border: 1px solid white;   --> 
+						<p style="margin-left:75px; margin-top:25px">Start:</p>  
+						<p style="margin-left:75px; margin-top:30px">Finish:</p>
+						<p style="margin-left:75px; margin-top:30px">Location:</p>
+						<p style="margin-left:75px; margin-top:40px">Rank:</p>
+						<p style="margin-left:75px; margin-top:300px;">Activity:
+						<input type="text" name="daterange" value="01/01/2018 - 01/15/2018"/>
+						<button style="margin-left:0px;">
+						<img src="runner2.png" style="margin-left:55px;">
 						</button>
 						</p>
 					</div>
 					<div class="col-lg-3" style="padding: 0px;">
 						<div>
-							<input id="input" class="form-control form-control-sm" type="text" placeholder="coordinates"> 
-							<input class="form-control form-control-sm" type="text" placeholder="coordinates"
-							style="margin-left:0px; margin-top:40px; margin-bottom:170px; border-radius: 10px; width:70%;">
+							<input  id="input2" class="form-control form-control-sm" type="text" placeholder="coordinates"
+							style="margin-top:20px"> 
+							<input id="input2" class="form-control form-control-sm" type="text" placeholder="coordinates">
+							<input id="input2" class="form-control form-control-sm" type="text" placeholder="coordinates">
+							<input id="input2" class="form-control form-control-sm" type="text" placeholder="coordinates">
 						</div>
-					<div>
+					<div style="margin-top:300px;"> 
 						<button>
 							<img src="hiker2.png">
 						</button>
@@ -126,9 +136,9 @@
 						</button>
 					</div>
 					</div>
-					<div class="col-lg-6" id='modalmap'>
-						<div class="mapboxgl-canvas" style="position: absolute; width: 569px; height: 485px;" width="500" height="600"></div>
-						
+					<div class="col-lg-6" style="border: 1px solid white; margin-right:px;">
+						<p id="demo"></p>
+						<div id='map'></div>
 					</div>
 					</div>
 					<div class="row">
@@ -158,19 +168,48 @@
 
 	<script>
 
-		var route = new Route;
+
+	$(function() {
+	$('input[name="daterange"]').daterangepicker({
+		opens: 'left'
+	}, function(start, end, label) {
+		console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+	});
+	});
+
 	
 		mapboxgl.accessToken = 'pk.eyJ1IjoiYW50a3VrIiwiYSI6ImNqd2o3enRqejAwb2Y0OHBqaHZjMW03YzcifQ.U6SfQXTKYD-etKuREAD5EQ';
 
 		window.onload = function () {
-		
-			route.getLocation('map');
-			
+			getLocation();    
 		}
 
-		$('a[href$="#myBtn"]').on( "click", function() {
-			route.getLocation('modalmap');
-		});
+		var x = document.getElementById("demo");
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
+
+		function showPosition(position) {
+
+
+			x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+			var latlon = [position.coords.longitude, position.coords.latitude];
+			
+
+			var map = new mapboxgl.Map({
+				container: 'map', // container id
+				style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+				center: latlon, // starting position [lng, lat]
+				zoom: 11 // starting zoom                  
+			});
+
+		}
+	
+
 	
 	var $table = $('#table');
 			$table.bootstrapTable({
@@ -220,8 +259,7 @@
 				var endPoint = row.endpoint.split(',');
 
 				console.log(startPoint, endPoint);
-
-				route.ShowRoute(startPoint, endPoint);
+				ShowRoute(startPoint, endPoint);
 				
 				}
 				
