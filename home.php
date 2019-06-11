@@ -26,7 +26,6 @@
 		}
 	</style>
 </head>
-
 <body id="background" background="image1.jpg">
 	<header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style= "margin:25px 100px; border-radius: 10px; height:7%; width:85%;">
@@ -61,8 +60,6 @@
 	<div class="col-md-6">
 		<div class="page-header">
 		</div>
-
-
 		<div class="panel panel-success">
 
 			<div class="panel-body">
