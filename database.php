@@ -36,6 +36,14 @@
             return $query;  
 
             }  
+        public function SaveRoute($start, $finish)
+        {  
+            //$password = md5($password);  
+            $query = "INSERT INTO ways (startpoint, endpoint) values('".$start."','".$finish."')" or die(mysql_error()); 
+            $result = mysqli_query($this->con, $query);  
+            return $query;  
+
+            }  
 
       public function can_login($table_name, $where_condition)  
       {  
