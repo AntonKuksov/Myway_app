@@ -115,7 +115,8 @@ if (isset($_POST['save'])) {
 		</div>
 		<div class="col-lg-6">
 			<!-- style="border: 1px solid black" -->
-			<a class="btn btn-primary sim-button" href="#myBtn" role="button" data-toggle="modal" data-target=".bd-example-modal-xl" style="margin-left:175px; margin-top: 100px; margin-bottom:80px; border-radius: 10px; width:40%">
+			<a class="btn btn-primary sim-button" href="#myBtn" role="button" data-toggle="modal" data-target=".bd-example-modal-xl" 
+			style="margin-left:175px; margin-top: 100px; margin-bottom:80px; border-radius: 10px; width:40%">
 				<span>CREATE A PATH ----></span></a>
 			<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-xl">
@@ -124,45 +125,39 @@ if (isset($_POST['save'])) {
 						<form action="users.php" method="post" autocomplete="off">
 							<div class="row" style="margin-top:50px">
 								<div class="col-lg-3" style="padding: 0px; ">
-									<!--border: 1px solid white;   -->
+									<!-- border: 1px solid white;  -->
 									<p style="margin-left:75px; margin-top:25px">Start:</p>
 									<p style="margin-left:75px; margin-top:30px">Finish:</p>
 									<p style="margin-left:75px; margin-top:30px">Location:</p>
 									<p style="margin-left:75px; margin-top:40px">Rank:</p>
-									<p style="margin-left:75px; margin-top:300px;">Activity:
-									<form action="/action_page.php">
-									Date: <input type="date" name="bday">
-									<input type="submit">
-									</form>
+									
+									<p style="margin-left:75px; margin-top:200px;">Activity:
 										<button style="margin-left:0px;">
 											<img src="runner2.png" style="margin-left:55px;">
 										</button>
 									</p>
 								</div>
-								<div class="col-lg-3" style="padding: 0px;">
-									<div>
+								<div class="col-lg-3" style="padding: 0px;"><!-- border: 1px solid white; -->
 									<form class="form-signin" action="users.php" method="post" autocomplete="off">
-							<div class="form-label-group">
-								<input type="text" name="Start" id="inputUserame" class="form-control" placeholder="" required autofocus>
-							</div>
-							<hr>
-							<div class="form-label-group">
-								<input type="password" name="Finish" id="inputPassword" class="form-control" placeholder="" required>
-							</div>
-							<hr>
-							<div class="form-label-group">
-								<input type="password" name="Location" id="inputPassword" class="form-control" placeholder="" required>
-							</div>
-							<hr>
-							<div class="form-label-group">
-								<input type="password" name="Rank" id="inputPassword" class="form-control" placeholder="" required>
-							</div>
-							<hr>
-							<button class="btn btn-lg btn-primary btn-block text-uppercase" name="login" type="submit">Login</button>
-							<button id="SignBack" class="btn btn-lg btn-primary btn-block text-uppercase" name="signback" onclick="location.reload()">Back</button>
-						</form>
-									</div>
-									<div style="margin-top:300px;">
+										<div class="form-modal">
+											<input style="width:250px; height:30px;" type="text" name="Start" id="inputUserame" class="form-control" placeholder="" required autofocus>
+										</div>
+										<div class="form-modal">
+											<input style="width:250px; height:30px;" type="password" name="Finish" id="inputPassword" class="form-control" placeholder="" required>
+										</div>
+										<div class="form-modal">
+											<input style="width:200px; height:30px;" type="password" name="Location" id="inputPassword" class="form-control" placeholder="" required>
+										</div>
+										<div class="form-modal">
+											<input style="width:200px; height:30px;" type="password" name="Rank" id="inputPassword" class="form-control" placeholder="" required>
+										</div>
+									</form>	
+									<form action="/action_page.php" >
+										<input type="date" name="bday">
+										<input type="submit">
+									</form>
+								
+									<div style="margin-top:145px;">
 										<button>
 											<img src="hiker2.png">
 										</button>
@@ -174,16 +169,18 @@ if (isset($_POST['save'])) {
 										</button>
 									</div>
 								</div>
+							
 
-								<div class="col-lg-6" id='modalmap'>
-									<div class="col-lg-6" style="margin-right:px;"><!-- border: 1px solid white; -->
-										<div class="mapboxgl-canvas" style="position: absolute; width: 569px; height: 485px;" width="500" height="600"></div>
-
-
-									</div>
+								<div class="col-lg-6" id='modalmap' >
+									<!-- style="border: 1px solid white;" -->
+										<div class="mapboxgl-canvas" style="position: absolute;" width=600 height=500>
+										</div>
+									
+								</div>
+							</div>
 									<div class="row">
-										<div class="col-lg-6">
-											<!-- style="border: 1px solid white;" -->
+										<div class="col-lg-6" >
+											<!--style="border: 1px solid white;" -->
 											<a class="btn btn-primary sim-button" href="" role="button" style="margin-left:200px; margin-top:100px; margin-bottom:100px; border-radius: 10px">
 												<span>BACK</span></a>
 
@@ -196,7 +193,7 @@ if (isset($_POST['save'])) {
 									</div>
 								</div>
 						
-							</div>
+							
 						</form>
 						</div>
 					</div>
