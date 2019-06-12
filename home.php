@@ -130,7 +130,10 @@ if (isset($_POST['save'])) {
 									<p style="margin-left:75px; margin-top:30px">Location:</p>
 									<p style="margin-left:75px; margin-top:40px">Rank:</p>
 									<p style="margin-left:75px; margin-top:300px;">Activity:
-										<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+									<form action="/action_page.php">
+									Date: <input type="date" name="bday">
+									<input type="submit">
+									</form>
 										<button style="margin-left:0px;">
 											<img src="runner2.png" style="margin-left:55px;">
 										</button>
