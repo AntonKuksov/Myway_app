@@ -141,11 +141,26 @@ if (isset($_POST['save'])) {
 								</div>
 								<div class="col-lg-3" style="padding: 0px;">
 									<div>
-										
-											<input id="start" class="form-control form-control-sm" type="text" placeholder="start" style="margin-top:20px">
-											<input id="finish" class="form-control form-control-sm" type="text" placeholder="finish">
-											<input id="location" class="form-control form-control-sm" type="text" placeholder="location">
-											<input id="rank" class="form-control form-control-sm" type="text" placeholder="rank">
+									<form class="form-signin" action="users.php" method="post" autocomplete="off">
+							<div class="form-label-group">
+								<input type="text" name="Start" id="inputUserame" class="form-control" placeholder="" required autofocus>
+							</div>
+							<hr>
+							<div class="form-label-group">
+								<input type="password" name="Finish" id="inputPassword" class="form-control" placeholder="" required>
+							</div>
+							<hr>
+							<div class="form-label-group">
+								<input type="password" name="Location" id="inputPassword" class="form-control" placeholder="" required>
+							</div>
+							<hr>
+							<div class="form-label-group">
+								<input type="password" name="Rank" id="inputPassword" class="form-control" placeholder="" required>
+							</div>
+							<hr>
+							<button class="btn btn-lg btn-primary btn-block text-uppercase" name="login" type="submit">Login</button>
+							<button id="SignBack" class="btn btn-lg btn-primary btn-block text-uppercase" name="signback" onclick="location.reload()">Back</button>
+						</form>
 									</div>
 									<div style="margin-top:300px;">
 										<button>
@@ -161,7 +176,7 @@ if (isset($_POST['save'])) {
 								</div>
 
 								<div class="col-lg-6" id='modalmap'>
-									<div class="col-lg-6" style="border: 1px solid white; margin-right:px;">
+									<div class="col-lg-6" style="margin-right:px;"><!-- border: 1px solid white; -->
 										<div class="mapboxgl-canvas" style="position: absolute; width: 569px; height: 485px;" width="500" height="600"></div>
 
 
